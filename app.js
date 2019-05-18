@@ -15,12 +15,11 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));//css file
 
-//securing username and password for mongodDB 
+//securing username and password for mongodDB
 const myUserName = config.MY_USERNAME;
 const password = config.PASSWORD;
 
 //connect your data into mongodDB atlas servers
-// mongoose.connect("mongodb+srv://admin-aki:test-123@cluster0-ewgxe.mongodb.net/todolistDB", {useNewUrlParser:true}); //connecting to database mongodb
 mongoose.connect("mongodb+srv://"+myUserName +":"+password +"+@cluster0-ewgxe.mongodb.net/todolistDB", {useNewUrlParser:true});
 
 
